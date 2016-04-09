@@ -16,7 +16,7 @@ public interface Rest {
 
     //Get Famous Artists
     @Headers({"Accept: application/json", "Content-Type: application / json"})
-    @GET("/mobilization-2016/artists.json")
+    @GET("artists.json")
     Observable<List<Artist>> getArtists();
 
 }

@@ -1,8 +1,9 @@
 package com.github.dan4ik95dv.famousartists.model;
 
-import javax.annotation.Generated;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import javax.annotation.Generated;
 
 /**
  * Created by Daniil Celikin on 09.04.2016.
@@ -20,36 +21,28 @@ public class Cover {
     private String big;
 
     /**
-     *
-     * @return
-     * The small
+     * @return The small
      */
     public String getSmall() {
         return small;
     }
 
     /**
-     *
-     * @param small
-     * The small
+     * @param small The small
      */
     public void setSmall(String small) {
         this.small = small;
     }
 
     /**
-     *
-     * @return
-     * The big
+     * @return The big
      */
     public String getBig() {
         return big;
     }
 
     /**
-     *
-     * @param big
-     * The big
+     * @param big The big
      */
     public void setBig(String big) {
         this.big = big;
