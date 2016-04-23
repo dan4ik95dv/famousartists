@@ -1,6 +1,7 @@
 package com.github.dan4ik95dv.famousartists.di.module;
 
-import com.github.dan4ik95dv.famousartists.io.client.Rest;
+import com.github.dan4ik95dv.famousartists.io.client.RestContest;
+import com.github.dan4ik95dv.famousartists.io.client.RestMusic;
 
 import javax.inject.Singleton;
 
@@ -20,8 +21,14 @@ public class ClientModule {
 
     @Singleton
     @Provides
-    public Rest providesRest(Retrofit retrofit) {
-        return retrofit.create(Rest.class);
+    public RestContest providesRestContest(Retrofit retrofit) {
+        return retrofit.create(RestContest.class);
+    }
+
+    @Singleton
+    @Provides
+    public RestMusic providesRestMusicApi(Retrofit retrofit) {
+        return retrofit.create(RestMusic.class);
     }
 
 }

@@ -1,5 +1,7 @@
 package com.github.dan4ik95dv.famousartists.ui.presenter;
 
+import android.content.Context;
+
 import com.github.dan4ik95dv.famousartists.ui.view.MainMvpView;
 
 /**
@@ -8,6 +10,12 @@ import com.github.dan4ik95dv.famousartists.ui.view.MainMvpView;
  */
 public class MainPresenter implements Presenter<MainMvpView> {
     private MainMvpView mainMvpView;
+
+    public MainPresenter(Context context) {
+        // App.getInstance().getClientComponent().inject(this);
+        attachView((MainMvpView) context);
+    }
+
 
     @Override
     public void attachView(MainMvpView view) {

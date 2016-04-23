@@ -1,4 +1,4 @@
-package com.github.dan4ik95dv.famousartists.model;
+package com.github.dan4ik95dv.famousartists.model.contest;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -6,14 +6,12 @@ import com.google.gson.annotations.SerializedName;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Generated;
-
 /**
  * Created by Daniil Celikin on 09.04.2016.
  * https://github.com/dan4ik95dv/famousartists
  */
 
-@Generated("org.jsonschema2pojo")
+
 public class Artist {
 
     @SerializedName("id")

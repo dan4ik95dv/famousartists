@@ -2,8 +2,6 @@ package com.github.dan4ik95dv.famousartists.di.module;
 
 import android.app.Application;
 
-import com.facebook.stetho.okhttp3.StethoInterceptor;
-import com.github.dan4ik95dv.famousartists.BuildConfig;
 import com.github.dan4ik95dv.famousartists.constant.Client;
 import com.google.gson.Gson;
 
@@ -46,8 +44,8 @@ public class NetModule {
                 .connectTimeout(Client.Timeout.CONNECT_TIMEOUT, TimeUnit.SECONDS)
                 .readTimeout(Client.Timeout.READ_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(Client.Timeout.WRITE_TIMEOUT, TimeUnit.SECONDS);
-        if (BuildConfig.DEBUG)
-            httpClientBuilder.addNetworkInterceptor(new StethoInterceptor());
+//        if (BuildConfig.DEBUG)
+//            httpClientBuilder.addNetworkInterceptor(new StethoInterceptor());
 
         return httpClientBuilder.build();
     }

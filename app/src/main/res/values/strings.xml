@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Famous Artists</string>
+    <string name="artists_nav">Исполнители</string>
+    <string name="settings_nav">Настройки</string>
 </resources>

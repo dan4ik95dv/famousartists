@@ -5,4 +5,5 @@ package com.github.dan4ik95dv.famousartists.ui.view;
  * https://github.com/dan4ik95dv/famousartists
  */
 public interface FragmentMvpView {
+    void updateFragment();
 }

@@ -1,6 +1,6 @@
 package com.github.dan4ik95dv.famousartists.io.client;
 
-import com.github.dan4ik95dv.famousartists.model.Artist;
+import com.github.dan4ik95dv.famousartists.model.contest.Artist;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import rx.Observable;
  * Created by Daniil Celikin on 09.04.2016.
  * https://github.com/dan4ik95dv/famousartists
  */
-public interface Rest {
+public interface RestContest {
 
     //Get Famous Artists
     @Headers({"Accept: application/json", "Content-Type: application / json"})

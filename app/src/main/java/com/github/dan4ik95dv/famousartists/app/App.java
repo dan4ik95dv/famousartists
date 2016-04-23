@@ -4,13 +4,14 @@ import android.app.Application;
 import android.content.Context;
 import android.support.multidex.MultiDex;
 
-import com.facebook.stetho.Stetho;
-import com.github.dan4ik95dv.famousartists.BuildConfig;
 import com.github.dan4ik95dv.famousartists.di.component.ApplicationComponent;
 import com.github.dan4ik95dv.famousartists.di.component.ClientComponent;
 import com.github.dan4ik95dv.famousartists.di.component.DaggerApplicationComponent;
 import com.github.dan4ik95dv.famousartists.di.component.DaggerClientComponent;
 import com.github.dan4ik95dv.famousartists.di.module.ApplicationModule;
+import com.github.dan4ik95dv.famousartists.di.module.ClientModule;
+import com.github.dan4ik95dv.famousartists.di.module.NetModule;
+
 
 /**
  * Created by Daniil Celikin on 09.04.2016.
@@ -31,10 +32,13 @@ public class App extends Application {
 
         self = this;
 
-        if (BuildConfig.DEBUG)
-            Stetho.initializeWithDefaults(this);
+//        if (BuildConfig.DEBUG)
+//            Stetho.initializeWithDefaults(this);
 
         mClientComponent = DaggerClientComponent.builder()
+                .applicationModule(new ApplicationModule(this))
+                .netModule(new NetModule())
+                .clientModule(new ClientModule())
                 .build();
 
         mApplicationComponent = DaggerApplicationComponent.builder()
