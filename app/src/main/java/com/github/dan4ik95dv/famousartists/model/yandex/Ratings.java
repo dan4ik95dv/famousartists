@@ -1,61 +1,64 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import io.realm.RealmObject;
 
-public class Ratings {
+
+public class Ratings extends RealmObject {
 
     @SerializedName("day")
     @Expose
-    private Integer day;
+    private RealmInteger day;
     @SerializedName("month")
     @Expose
-    private Integer month;
+    private RealmInteger month;
     @SerializedName("week")
     @Expose
-    private Integer week;
+    private RealmInteger week;
 
     /**
      * @return The day
      */
     public Integer getDay() {
-        return day;
+        return day.getValue();
     }
 
     /**
      * @param day The day
      */
     public void setDay(Integer day) {
-        this.day = day;
+        this.day = new RealmInteger(day);
     }
 
     /**
      * @return The month
      */
     public Integer getMonth() {
-        return month;
+        return month.getValue();
     }
 
     /**
      * @param month The month
      */
     public void setMonth(Integer month) {
-        this.month = month;
+        this.month = new RealmInteger(month);
     }
 
     /**
      * @return The week
      */
     public Integer getWeek() {
-        return week;
+        return week.getValue();
     }
 
     /**
      * @param week The week
      */
     public void setWeek(Integer week) {
-        this.week = week;
+        this.week = new RealmInteger(week);
     }
 
 }

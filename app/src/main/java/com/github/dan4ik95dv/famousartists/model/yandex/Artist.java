@@ -1,126 +1,129 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmBoolean;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.realm.RealmList;
+import io.realm.RealmObject;
 
 
-public class Artist {
+public class Artist extends RealmObject {
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private RealmInteger id;
     @SerializedName("name")
     @Expose
-    private String name;
+    private RealmString name;
     @SerializedName("various")
     @Expose
-    private Boolean various;
+    private RealmBoolean various;
     @SerializedName("composer")
     @Expose
-    private Boolean composer;
+    private RealmBoolean composer;
     @SerializedName("cover")
     @Expose
     private Cover cover;
     @SerializedName("genres")
     @Expose
-    private List<String> genres = new ArrayList<String>();
+    private RealmList<RealmString> genres;
     @SerializedName("counts")
     @Expose
     private Counts counts;
     @SerializedName("available")
     @Expose
-    private Boolean available;
+    private RealmBoolean available;
     @SerializedName("ratings")
     @Expose
     private Ratings ratings;
     @SerializedName("links")
     @Expose
-    private List<Link> links = new ArrayList<Link>();
+    private RealmList<Link> links;
     @SerializedName("likesCount")
     @Expose
-    private Integer likesCount;
+    private RealmInteger likesCount;
     @SerializedName("likesCounter")
     @Expose
-    private Integer likesCounter;
+    private RealmInteger likesCounter;
     @SerializedName("description")
     @Expose
     private Description description;
     @SerializedName("countries")
     @Expose
-    private List<String> countries = new ArrayList<String>();
+    private RealmList<RealmString> countries;
     @SerializedName("initDate")
     @Expose
-    private String initDate;
+    private RealmString initDate;
     @SerializedName("enWikipediaLink")
     @Expose
-    private String enWikipediaLink;
+    private RealmString enWikipediaLink;
     @SerializedName("dbAliases")
     @Expose
-    private List<String> dbAliases = new ArrayList<String>();
+    private RealmList<RealmString> dbAliases;
     @SerializedName("ticketsAvailable")
     @Expose
-    private Boolean ticketsAvailable;
+    private RealmBoolean ticketsAvailable;
     @SerializedName("allCovers")
     @Expose
-    private List<Cover> allCovers = new ArrayList<Cover>();
+    private RealmList<Cover> allCovers;
 
     /**
      * @return The id
      */
     public Integer getId() {
-        return id;
+        return id.getValue();
     }
 
     /**
      * @param id The id
      */
     public void setId(Integer id) {
-        this.id = id;
+        this.id = new RealmInteger(id);
     }
 
     /**
      * @return The name
      */
     public String getName() {
-        return name;
+        return name.getValue();
     }
 
     /**
      * @param name The name
      */
     public void setName(String name) {
-        this.name = name;
+        this.name = new RealmString(name);
     }
 
     /**
      * @return The various
      */
     public Boolean getVarious() {
-        return various;
+        return various.getValue();
     }
 
     /**
      * @param various The various
      */
     public void setVarious(Boolean various) {
-        this.various = various;
+        this.various = new RealmBoolean(various);
     }
 
     /**
      * @return The composer
      */
     public Boolean getComposer() {
-        return composer;
+        return composer.getValue();
     }
 
     /**
      * @param composer The composer
      */
     public void setComposer(Boolean composer) {
-        this.composer = composer;
+        this.composer = new RealmBoolean(composer);
     }
 
     /**
@@ -140,14 +143,14 @@ public class Artist {
     /**
      * @return The genres
      */
-    public List<String> getGenres() {
+    public RealmList<RealmString> getGenres() {
         return genres;
     }
 
     /**
      * @param genres The genres
      */
-    public void setGenres(List<String> genres) {
+    public void setGenres(RealmList<RealmString> genres) {
         this.genres = genres;
     }
 
@@ -169,14 +172,14 @@ public class Artist {
      * @return The available
      */
     public Boolean getAvailable() {
-        return available;
+        return available.getValue();
     }
 
     /**
      * @param available The available
      */
     public void setAvailable(Boolean available) {
-        this.available = available;
+        this.available = new RealmBoolean(available);
     }
 
     /**
@@ -196,14 +199,14 @@ public class Artist {
     /**
      * @return The links
      */
-    public List<Link> getLinks() {
+    public RealmList<Link> getLinks() {
         return links;
     }
 
     /**
      * @param links The links
      */
-    public void setLinks(List<Link> links) {
+    public void setLinks(RealmList<Link> links) {
         this.links = links;
     }
 
@@ -211,28 +214,28 @@ public class Artist {
      * @return The likesCount
      */
     public Integer getLikesCount() {
-        return likesCount;
+        return likesCount.getValue();
     }
 
     /**
      * @param likesCount The likesCount
      */
     public void setLikesCount(Integer likesCount) {
-        this.likesCount = likesCount;
+        this.likesCount = new RealmInteger(likesCount);
     }
 
     /**
      * @return The likesCounter
      */
     public Integer getLikesCounter() {
-        return likesCounter;
+        return likesCounter.getValue();
     }
 
     /**
      * @param likesCounter The likesCounter
      */
     public void setLikesCounter(Integer likesCounter) {
-        this.likesCounter = likesCounter;
+        this.likesCounter = new RealmInteger(likesCounter);
     }
 
     /**
@@ -252,14 +255,14 @@ public class Artist {
     /**
      * @return The countries
      */
-    public List<String> getCountries() {
+    public RealmList<RealmString> getCountries() {
         return countries;
     }
 
     /**
      * @param countries The countries
      */
-    public void setCountries(List<String> countries) {
+    public void setCountries(RealmList<RealmString> countries) {
         this.countries = countries;
     }
 
@@ -267,41 +270,41 @@ public class Artist {
      * @return The initDate
      */
     public String getInitDate() {
-        return initDate;
+        return initDate.getValue();
     }
 
     /**
      * @param initDate The initDate
      */
     public void setInitDate(String initDate) {
-        this.initDate = initDate;
+        this.initDate = new RealmString( initDate);
     }
 
     /**
      * @return The enWikipediaLink
      */
     public String getEnWikipediaLink() {
-        return enWikipediaLink;
+        return enWikipediaLink.getValue();
     }
 
     /**
      * @param enWikipediaLink The enWikipediaLink
      */
     public void setEnWikipediaLink(String enWikipediaLink) {
-        this.enWikipediaLink = enWikipediaLink;
+        this.enWikipediaLink = new RealmString(enWikipediaLink);
     }
 
     /**
      * @return The dbAliases
      */
-    public List<String> getDbAliases() {
+    public RealmList<RealmString> getDbAliases() {
         return dbAliases;
     }
 
     /**
      * @param dbAliases The dbAliases
      */
-    public void setDbAliases(List<String> dbAliases) {
+    public void setDbAliases(RealmList<RealmString> dbAliases) {
         this.dbAliases = dbAliases;
     }
 
@@ -309,27 +312,27 @@ public class Artist {
      * @return The ticketsAvailable
      */
     public Boolean getTicketsAvailable() {
-        return ticketsAvailable;
+        return ticketsAvailable.getValue();
     }
 
     /**
      * @param ticketsAvailable The ticketsAvailable
      */
     public void setTicketsAvailable(Boolean ticketsAvailable) {
-        this.ticketsAvailable = ticketsAvailable;
+        this.ticketsAvailable = new RealmBoolean(ticketsAvailable);
     }
 
     /**
      * @return The allCovers
      */
-    public List<Cover> getAllCovers() {
+    public RealmList<Cover> getAllCovers() {
         return allCovers;
     }
 
     /**
      * @param allCovers The allCovers
      */
-    public void setAllCovers(List<Cover> allCovers) {
+    public void setAllCovers(RealmList<Cover> allCovers) {
         this.allCovers = allCovers;
     }
 

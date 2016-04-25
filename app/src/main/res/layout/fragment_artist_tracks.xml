@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshDiscounts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.github.dan4ik95dv.famousartists.ui.widget.EmptyRecyclerView
+                android:id="@+id/listTracks"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical" />
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+        <RelativeLayout
+            android:id="@+id/layoutNoTracks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/textNoTracksMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textNoTracksSecond"
+                android:layout_alignWithParentIfMissing="false"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:gravity="center"
+                android:text="@string/empty_tracks"
+                android:textColor="@color/primary_text_default_material_light"
+                android:textSize="20sp" />
+
+            <com.devspark.robototextview.widget.RobotoTextView
+                android:id="@+id/textNoTracksSecond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/sooo_bad"
+                android:textColor="@color/secondary_text_default_material_light"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+        <include layout="@layout/view_progress" />
+    </FrameLayout>
+</android.support.design.widget.CoordinatorLayout>

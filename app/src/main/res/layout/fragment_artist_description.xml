@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:id="@+id/contentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include layout="@layout/view_progress" />
+
+                <LinearLayout
+                    android:id="@+id/descriptionInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="24dp"
+                    android:orientation="vertical"
+                    android:padding="8dp"
+                    android:visibility="gone">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            android:id="@+id/genresNameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#8a212224"
+                            app:typeface="roboto_regular" />
+
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/infoArtistTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#8a212224"
+                        app:typeface="roboto_regular" />
+
+                    <View style="@style/Divider" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/descriptionArtistLayout"
+                    android:layout_below="@+id/descriptionInfoLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/labelBiography"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp"
+                        android:text="@string/biography"
+                        android:textColor="@android:color/black"
+                        app:typeface="roboto_medium" />
+                    <com.devspark.robototextview.widget.RobotoTextView
+                        android:id="@+id/descriptionTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:textColor="@android:color/black"
+                        app:typeface="roboto_regular" />
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+    </android.support.design.widget.CoordinatorLayout>
+</FrameLayout>

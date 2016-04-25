@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 
 import com.github.dan4ik95dv.famousartists.app.App;
+import com.github.dan4ik95dv.famousartists.io.bus.RxBus;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 
@@ -29,6 +30,11 @@ public class ApplicationModule {
     @Singleton
     Application providesApplication() {
         return mApp;
+    }
+
+    @Provides
+    RxBus provideRxBus() {
+        return RxBus.getDefault();
     }
 
     @Provides

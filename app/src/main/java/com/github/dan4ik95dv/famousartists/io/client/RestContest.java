@@ -1,8 +1,9 @@
 package com.github.dan4ik95dv.famousartists.io.client;
 
-import com.github.dan4ik95dv.famousartists.model.contest.Artist;
 
-import java.util.List;
+import com.github.dan4ik95dv.famousartists.model.contest.ArtistContest;
+
+import java.util.ArrayList;
 
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -17,6 +18,6 @@ public interface RestContest {
     //Get Famous Artists
     @Headers({"Accept: application/json", "Content-Type: application / json"})
     @GET("artists.json")
-    Observable<List<Artist>> getArtists();
+    Observable<ArrayList<ArtistContest>> getArtists();
 
 }

@@ -1,35 +1,36 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.realm.RealmList;
+import io.realm.RealmObject;
 
 
-public class Artists {
+public class Artists extends RealmObject {
 
     @SerializedName("items")
     @Expose
-    private List<Item> items = new ArrayList<Item>();
+    private RealmList<Item> items;
     @SerializedName("total")
     @Expose
-    private Integer total;
+    private RealmInteger total;
     @SerializedName("perPage")
     @Expose
-    private Integer perPage;
+    private RealmInteger perPage;
 
     /**
      * @return The items
      */
-    public List<Item> getItems() {
+    public RealmList<Item> getItems() {
         return items;
     }
 
     /**
      * @param items The items
      */
-    public void setItems(List<Item> items) {
+    public void setItems(RealmList<Item> items) {
         this.items = items;
     }
 
@@ -37,28 +38,28 @@ public class Artists {
      * @return The total
      */
     public Integer getTotal() {
-        return total;
+        return total.getValue();
     }
 
     /**
      * @param total The total
      */
     public void setTotal(Integer total) {
-        this.total = total;
+        this.total = new RealmInteger(total);
     }
 
     /**
      * @return The perPage
      */
     public Integer getPerPage() {
-        return perPage;
+        return perPage.getValue();
     }
 
     /**
      * @param perPage The perPage
      */
     public void setPerPage(Integer perPage) {
-        this.perPage = perPage;
+        this.perPage = new RealmInteger(perPage);
     }
 
 }

@@ -1,85 +1,96 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmBoolean;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 
-public class Item {
+public class Item extends RealmObject {
+    @PrimaryKey
+    private int sId;
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private RealmInteger id;
     @SerializedName("various")
     @Expose
-    private Boolean various;
+    private RealmBoolean various;
     @SerializedName("name")
     @Expose
-    private String name;
+    private RealmString name;
     @SerializedName("cover")
     @Expose
     private Cover cover;
     @SerializedName("composer")
     @Expose
-    private Boolean composer;
+    private RealmBoolean composer;
     @SerializedName("counts")
     @Expose
     private Counts counts;
     @SerializedName("genres")
     @Expose
-    private List<String> genres = new ArrayList<String>();
+    private RealmList<RealmString> genres;
     @SerializedName("ticketsAvailable")
     @Expose
-    private Boolean ticketsAvailable;
+    private RealmBoolean ticketsAvailable;
     @SerializedName("popularTracks")
     @Expose
-    private List<PopularTrack> popularTracks = new ArrayList<PopularTrack>();
+    private RealmList<PopularTrack> popularTracks;
     @SerializedName("regions")
     @Expose
-    private List<String> regions = new ArrayList<String>();
+    private RealmList<RealmString> regions;
 
     /**
      * @return The id
      */
     public Integer getId() {
-        return id;
+        return id.getValue();
     }
 
     /**
      * @param id The id
      */
     public void setId(Integer id) {
-        this.id = id;
+        this.sId = id;
+        this.id = new RealmInteger(id);
+    }
+
+    public int getsId() {
+        return sId;
     }
 
     /**
      * @return The various
      */
     public Boolean getVarious() {
-        return various;
+        return various.getValue();
     }
 
     /**
      * @param various The various
      */
     public void setVarious(Boolean various) {
-        this.various = various;
+        this.various = new RealmBoolean(various);
     }
 
     /**
      * @return The name
      */
     public String getName() {
-        return name;
+        return name.getValue();
     }
 
     /**
      * @param name The name
      */
     public void setName(String name) {
-        this.name = name;
+        this.name = new RealmString(name);
     }
 
     /**
@@ -100,14 +111,14 @@ public class Item {
      * @return The composer
      */
     public Boolean getComposer() {
-        return composer;
+        return composer.getValue();
     }
 
     /**
      * @param composer The composer
      */
     public void setComposer(Boolean composer) {
-        this.composer = composer;
+        this.composer = new RealmBoolean(composer);
     }
 
     /**
@@ -127,14 +138,14 @@ public class Item {
     /**
      * @return The genres
      */
-    public List<String> getGenres() {
+    public RealmList<RealmString> getGenres() {
         return genres;
     }
 
     /**
      * @param genres The genres
      */
-    public void setGenres(List<String> genres) {
+    public void setGenres(RealmList<RealmString> genres) {
         this.genres = genres;
     }
 
@@ -142,41 +153,41 @@ public class Item {
      * @return The ticketsAvailable
      */
     public Boolean getTicketsAvailable() {
-        return ticketsAvailable;
+        return ticketsAvailable.getValue();
     }
 
     /**
      * @param ticketsAvailable The ticketsAvailable
      */
     public void setTicketsAvailable(Boolean ticketsAvailable) {
-        this.ticketsAvailable = ticketsAvailable;
+        this.ticketsAvailable = new RealmBoolean(ticketsAvailable);
     }
 
     /**
      * @return The popularTracks
      */
-    public List<PopularTrack> getPopularTracks() {
+    public RealmList<PopularTrack> getPopularTracks() {
         return popularTracks;
     }
 
     /**
      * @param popularTracks The popularTracks
      */
-    public void setPopularTracks(List<PopularTrack> popularTracks) {
+    public void setPopularTracks(RealmList<PopularTrack> popularTracks) {
         this.popularTracks = popularTracks;
     }
 
     /**
      * @return The regions
      */
-    public List<String> getRegions() {
+    public RealmList<RealmString> getRegions() {
         return regions;
     }
 
     /**
      * @param regions The regions
      */
-    public void setRegions(List<String> regions) {
+    public void setRegions(RealmList<RealmString> regions) {
         this.regions = regions;
     }
 

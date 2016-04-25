@@ -1,41 +1,44 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import io.realm.RealmList;
+import io.realm.RealmObject;
 
-public class Concert {
+
+public class Concert extends RealmObject {
 
     @SerializedName("artist")
     @Expose
     private Artist artist;
     @SerializedName("concertTitle")
     @Expose
-    private String concertTitle;
+    private RealmString concertTitle;
     @SerializedName("afishaUrl")
     @Expose
-    private String afishaUrl;
+    private RealmString afishaUrl;
     @SerializedName("city")
     @Expose
-    private String city;
+    private RealmString city;
     @SerializedName("place")
     @Expose
-    private String place;
+    private RealmString place;
     @SerializedName("datetime")
     @Expose
-    private String datetime;
+    private RealmString datetime;
     @SerializedName("metro-stations")
     @Expose
-    private List<MetroStation> metroStations = new ArrayList<MetroStation>();
+    private RealmList<MetroStation> metroStations;
     @SerializedName("hash")
     @Expose
-    private String hash;
+    private RealmString hash;
     @SerializedName("images")
     @Expose
-    private List<Object> images = new ArrayList<Object>();
+    private RealmList<RealmString> images;
 
     /**
      * @return The artist
@@ -55,70 +58,70 @@ public class Concert {
      * @return The concertTitle
      */
     public String getConcertTitle() {
-        return concertTitle;
+        return concertTitle.getValue();
     }
 
     /**
      * @param concertTitle The concertTitle
      */
     public void setConcertTitle(String concertTitle) {
-        this.concertTitle = concertTitle;
+        this.concertTitle = new RealmString(concertTitle);
     }
 
     /**
      * @return The afishaUrl
      */
     public String getAfishaUrl() {
-        return afishaUrl;
+        return afishaUrl.getValue();
     }
 
     /**
      * @param afishaUrl The afishaUrl
      */
     public void setAfishaUrl(String afishaUrl) {
-        this.afishaUrl = afishaUrl;
+        this.afishaUrl = new RealmString(afishaUrl);
     }
 
     /**
      * @return The city
      */
     public String getCity() {
-        return city;
+        return city.getValue();
     }
 
     /**
      * @param city The city
      */
     public void setCity(String city) {
-        this.city = city;
+        this.city = new RealmString( city);
     }
 
     /**
      * @return The place
      */
     public String getPlace() {
-        return place;
+        return place.getValue();
     }
 
     /**
      * @param place The place
      */
     public void setPlace(String place) {
-        this.place = place;
+        this.place =  new RealmString(place);
     }
 
     /**
      * @return The datetime
      */
     public String getDatetime() {
-        return datetime;
+        return datetime.getValue();
     }
 
     /**
      * @param datetime The datetime
      */
     public void setDatetime(String datetime) {
-        this.datetime = datetime;
+        this.datetime = new RealmString(datetime);
     }
 
     /**
@@ -131,7 +134,7 @@ public class Concert {
     /**
      * @param metroStations The metro-stations
      */
-    public void setMetroStations(List<MetroStation> metroStations) {
+    public void setMetroStations(RealmList<MetroStation> metroStations) {
         this.metroStations = metroStations;
     }
 
@@ -139,27 +142,27 @@ public class Concert {
      * @return The hash
      */
     public String getHash() {
-        return hash;
+        return hash.getValue();
     }
 
     /**
      * @param hash The hash
      */
     public void setHash(String hash) {
-        this.hash = hash;
+        this.hash = new RealmString(hash);
     }
 
     /**
      * @return The images
      */
-    public List<Object> getImages() {
+    public RealmList<RealmString> getImages() {
         return images;
     }
 
     /**
      * @param images The images
      */
-    public void setImages(List<Object> images) {
+    public void setImages(RealmList<RealmString> images) {
         this.images = images;
     }
 

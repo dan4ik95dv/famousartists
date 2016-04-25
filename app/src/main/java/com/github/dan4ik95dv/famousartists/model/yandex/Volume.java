@@ -1,166 +1,179 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmBoolean;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.Generated;
 
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
+
 @Generated("org.jsonschema2pojo")
-public class Volume {
+public class Volume extends RealmObject {
+
+
+    @PrimaryKey
+    private String sid;
 
     @SerializedName("id")
     @Expose
-    private String id;
+    private RealmString id;
     @SerializedName("realId")
     @Expose
-    private String realId;
+    private RealmString realId;
     @SerializedName("title")
     @Expose
-    private String title;
+    private RealmString title;
     @SerializedName("available")
     @Expose
-    private Boolean available;
+    private RealmBoolean available;
     @SerializedName("availableForPremiumUsers")
     @Expose
-    private Boolean availableForPremiumUsers;
+    private RealmBoolean availableForPremiumUsers;
     @SerializedName("durationMs")
     @Expose
-    private Integer durationMs;
+    private RealmInteger durationMs;
     @SerializedName("storageDir")
     @Expose
-    private String storageDir;
+    private RealmString storageDir;
     @SerializedName("fileSize")
     @Expose
-    private Integer fileSize;
+    private RealmInteger fileSize;
     @SerializedName("normalization")
     @Expose
     private Normalization normalization;
     @SerializedName("artists")
     @Expose
-    private List<Artist> artists = new ArrayList<Artist>();
+    private RealmList<Artist> artists;
     @SerializedName("albums")
     @Expose
-    private List<Album> albums = new ArrayList<Album>();
+    private RealmList<Album> albums;
     @SerializedName("lyricsAvailable")
     @Expose
-    private Boolean lyricsAvailable;
+    private RealmBoolean lyricsAvailable;
     @SerializedName("version")
     @Expose
-    private String version;
+    private RealmString version;
+
+    public String getSid() {
+        return sid;
+    }
 
     /**
      * @return The id
      */
     public String getId() {
-        return id;
+        return id.getValue();
     }
 
     /**
      * @param id The id
      */
     public void setId(String id) {
-        this.id = id;
+        this.sid = id;
+        this.id = new RealmString(id);
     }
 
     /**
      * @return The realId
      */
     public String getRealId() {
-        return realId;
+        return realId.getValue();
     }
 
     /**
      * @param realId The realId
      */
     public void setRealId(String realId) {
-        this.realId = realId;
+        this.realId = new RealmString(realId);
     }
 
     /**
      * @return The title
      */
     public String getTitle() {
-        return title;
+        return title.getValue();
     }
 
     /**
      * @param title The title
      */
     public void setTitle(String title) {
-        this.title = title;
+        this.title = new RealmString(title);
     }
 
     /**
      * @return The available
      */
     public Boolean getAvailable() {
-        return available;
+        return available.getValue();
     }
 
     /**
      * @param available The available
      */
     public void setAvailable(Boolean available) {
-        this.available = available;
+        this.available = new RealmBoolean(available);
     }
 
     /**
      * @return The availableForPremiumUsers
      */
     public Boolean getAvailableForPremiumUsers() {
-        return availableForPremiumUsers;
+        return availableForPremiumUsers.getValue();
     }
 
     /**
      * @param availableForPremiumUsers The availableForPremiumUsers
      */
     public void setAvailableForPremiumUsers(Boolean availableForPremiumUsers) {
-        this.availableForPremiumUsers = availableForPremiumUsers;
+        this.availableForPremiumUsers = new RealmBoolean(availableForPremiumUsers);
     }
 
     /**
      * @return The durationMs
      */
     public Integer getDurationMs() {
-        return durationMs;
+        return durationMs.getValue();
     }
 
     /**
      * @param durationMs The durationMs
      */
     public void setDurationMs(Integer durationMs) {
-        this.durationMs = durationMs;
+        this.durationMs = new RealmInteger(durationMs);
     }
 
     /**
      * @return The storageDir
      */
     public String getStorageDir() {
-        return storageDir;
+        return storageDir.getValue();
     }
 
     /**
      * @param storageDir The storageDir
      */
     public void setStorageDir(String storageDir) {
-        this.storageDir = storageDir;
+        this.storageDir = new RealmString(storageDir);
     }
 
     /**
      * @return The fileSize
      */
     public Integer getFileSize() {
-        return fileSize;
+        return fileSize.getValue();
     }
 
     /**
      * @param fileSize The fileSize
      */
     public void setFileSize(Integer fileSize) {
-        this.fileSize = fileSize;
+        this.fileSize = new RealmInteger(fileSize);
     }
 
     /**
@@ -180,28 +193,28 @@ public class Volume {
     /**
      * @return The artists
      */
-    public List<Artist> getArtists() {
+    public RealmList<Artist> getArtists() {
         return artists;
     }
 
     /**
      * @param artists The artists
      */
-    public void setArtists(List<Artist> artists) {
+    public void setArtists(RealmList<Artist> artists) {
         this.artists = artists;
     }
 
     /**
      * @return The albums
      */
-    public List<Album> getAlbums() {
+    public RealmList<Album> getAlbums() {
         return albums;
     }
 
     /**
      * @param albums The albums
      */
-    public void setAlbums(List<Album> albums) {
+    public void setAlbums(RealmList<Album> albums) {
         this.albums = albums;
     }
 
@@ -209,28 +222,28 @@ public class Volume {
      * @return The lyricsAvailable
      */
     public Boolean getLyricsAvailable() {
-        return lyricsAvailable;
+        return lyricsAvailable.getValue();
     }
 
     /**
      * @param lyricsAvailable The lyricsAvailable
      */
     public void setLyricsAvailable(Boolean lyricsAvailable) {
-        this.lyricsAvailable = lyricsAvailable;
+        this.lyricsAvailable = new RealmBoolean(lyricsAvailable);
     }
 
     /**
      * @return The version
      */
     public String getVersion() {
-        return version;
+        return version.getValue();
     }
 
     /**
      * @param version The version
      */
     public void setVersion(String version) {
-        this.version = version;
+        this.version = new RealmString(version);
     }
 
 }

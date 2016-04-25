@@ -29,10 +29,6 @@ public class SettingsFragment extends BaseFragment implements SettingsMvpView {
     @Inject
     SettingsPresenter presenter;
 
-    @Bind(R.id.toolbar)
-    Toolbar toolbar;
-    @Bind(R.id.appBarLayout)
-    AppBarLayout appBarLayout;
     @Bind(R.id.coordinatorLayout)
     CoordinatorLayout coordinatorLayout;
 
@@ -44,7 +40,6 @@ public class SettingsFragment extends BaseFragment implements SettingsMvpView {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         DaggerSettingsComponent.builder().settingsModule(new SettingsModule(getContext())).build().inject(this);
-        setRetainInstance(true);
         presenter.attachView(this);
     }
 
@@ -53,7 +48,7 @@ public class SettingsFragment extends BaseFragment implements SettingsMvpView {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         ButterKnife.bind(this, view);
-        toolbar.setTitle(R.string.settings_nav);
+
         return view;
     }
 

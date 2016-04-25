@@ -1,47 +1,49 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
+import com.github.dan4ik95dv.famousartists.model.yandex.artist.ItemArtist;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.realm.RealmList;
+import io.realm.RealmObject;
 
 
-public class Pics {
+public class Pics extends RealmObject {
 
     @SerializedName("query")
     @Expose
-    private String query;
+    private RealmString query;
     @SerializedName("items")
     @Expose
-    private List<com.github.dan4ik95dv.famousartists.model.yandex.artist.Item> items = new ArrayList<com.github.dan4ik95dv.famousartists.model.yandex.artist.Item>();
+    private RealmList<ItemArtist> itemArtists;
 
     /**
      * @return The query
      */
     public String getQuery() {
-        return query;
+        return query.getValue();
     }
 
     /**
      * @param query The query
      */
     public void setQuery(String query) {
-        this.query = query;
+        this.query = new RealmString(query);
     }
 
     /**
      * @return The items
      */
-    public List<com.github.dan4ik95dv.famousartists.model.yandex.artist.Item> getItems() {
-        return items;
+    public RealmList<ItemArtist> getItemArtists() {
+        return itemArtists;
     }
 
     /**
-     * @param items The items
+     * @param itemArtists The items
      */
-    public void setItems(List<com.github.dan4ik95dv.famousartists.model.yandex.artist.Item> items) {
-        this.items = items;
+    public void setItemArtists(RealmList<ItemArtist> itemArtists) {
+        this.itemArtists = itemArtists;
     }
 
 }

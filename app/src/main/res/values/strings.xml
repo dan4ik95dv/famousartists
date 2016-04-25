@@ -2,4 +2,15 @@
     <string name="app_name">Famous Artists</string>
     <string name="artists_nav">Исполнители</string>
     <string name="settings_nav">Настройки</string>
+    <string name="search">Поиск</string>
+    <string name="filter">Фильтр</string>
+    <string name="not_found">Ничего не найдено</string>
+    <string name="sorry">:(</string>
+    <string name="description_tab">Главное</string>
+    <string name="albums_tab">Альбомы</string>
+    <string name="tracks_tab">Треки</string>
+    <string name="sooo_bad">Пичалька (((</string>
+    <string name="empty_tracks">нет треков :с</string>
+    <string name="empty_albums">нет альбомов :с</string>
+    <string name="biography">Биография</string>
 </resources>

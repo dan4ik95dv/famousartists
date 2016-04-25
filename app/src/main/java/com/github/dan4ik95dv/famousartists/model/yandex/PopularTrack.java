@@ -1,144 +1,152 @@
 package com.github.dan4ik95dv.famousartists.model.yandex;
 
+import com.github.dan4ik95dv.famousartists.model.realm.RealmBoolean;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmInteger;
+import com.github.dan4ik95dv.famousartists.model.realm.RealmString;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+import io.realm.RealmList;
+import io.realm.RealmObject;
+import io.realm.annotations.PrimaryKey;
 
 
-public class PopularTrack {
+public class PopularTrack extends RealmObject {
+
+    @PrimaryKey
+    private Integer sId;
 
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private RealmInteger id;
     @SerializedName("storageDir")
     @Expose
-    private String storageDir;
+    private RealmString storageDir;
     @SerializedName("durationMillis")
     @Expose
-    private Integer durationMillis;
+    private RealmInteger durationMillis;
     @SerializedName("durationMs")
     @Expose
-    private Integer durationMs;
+    private RealmInteger durationMs;
     @SerializedName("explicit")
     @Expose
-    private Boolean explicit;
+    private RealmBoolean explicit;
     @SerializedName("title")
     @Expose
-    private String title;
+    private RealmString title;
     @SerializedName("available")
     @Expose
-    private Boolean available;
+    private RealmBoolean available;
     @SerializedName("album")
     @Expose
     private Album album;
     @SerializedName("albums")
     @Expose
-    private List<Album> albums = new ArrayList<Album>();
+    private RealmList<Album> albums;
     @SerializedName("artists")
     @Expose
-    private List<Object> artists = new ArrayList<Object>();
+    private RealmList<Artist> artists;
     @SerializedName("regions")
     @Expose
-    private List<String> regions = new ArrayList<String>();
+    private RealmList<RealmString> regions;
 
     /**
      * @return The id
      */
     public Integer getId() {
-        return id;
+        return id.getValue();
     }
 
     /**
      * @param id The id
      */
     public void setId(Integer id) {
-        this.id = id;
+        this.sId = id;
+        this.id = new RealmInteger(id);
     }
 
     /**
      * @return The storageDir
      */
     public String getStorageDir() {
-        return storageDir;
+        return storageDir.getValue();
     }
 
     /**
      * @param storageDir The storageDir
      */
     public void setStorageDir(String storageDir) {
-        this.storageDir = storageDir;
+        this.storageDir = new RealmString(storageDir);
     }
 
     /**
      * @return The durationMillis
      */
     public Integer getDurationMillis() {
-        return durationMillis;
+        return durationMillis.getValue();
     }
 
     /**
      * @param durationMillis The durationMillis
      */
     public void setDurationMillis(Integer durationMillis) {
-        this.durationMillis = durationMillis;
+        this.durationMillis = new RealmInteger(durationMillis);
     }
 
     /**
      * @return The durationMs
      */
     public Integer getDurationMs() {
-        return durationMs;
+        return durationMs.getValue();
     }
 
     /**
      * @param durationMs The durationMs
      */
     public void setDurationMs(Integer durationMs) {
-        this.durationMs = durationMs;
+        this.durationMs = new RealmInteger(durationMs);
     }
 
     /**
      * @return The explicit
      */
     public Boolean getExplicit() {
-        return explicit;
+        return explicit.getValue();
     }
 
     /**
      * @param explicit The explicit
      */
     public void setExplicit(Boolean explicit) {
-        this.explicit = explicit;
+        this.explicit = new RealmBoolean(explicit);
     }
 
     /**
      * @return The title
      */
     public String getTitle() {
-        return title;
+        return title.getValue();
     }
 
     /**
      * @param title The title
      */
     public void setTitle(String title) {
-        this.title = title;
+        this.title = new RealmString(title);
     }
 
     /**
      * @return The available
      */
     public Boolean getAvailable() {
-        return available;
+        return available.getValue();
     }
 
     /**
      * @param available The available
      */
     public void setAvailable(Boolean available) {
-        this.available = available;
+        this.available = new RealmBoolean(available);
     }
 
     /**
@@ -158,42 +166,42 @@ public class PopularTrack {
     /**
      * @return The albums
      */
-    public List<Album> getAlbums() {
+    public RealmList<Album> getAlbums() {
         return albums;
     }
 
     /**
      * @param albums The albums
      */
-    public void setAlbums(List<Album> albums) {
+    public void setAlbums(RealmList<Album> albums) {
         this.albums = albums;
     }
 
     /**
      * @return The artists
      */
-    public List<Object> getArtists() {
+    public RealmList<Artist> getArtists() {
         return artists;
     }
 
     /**
      * @param artists The artists
      */
-    public void setArtists(List<Object> artists) {
+    public void setArtists(RealmList<Artist> artists) {
         this.artists = artists;
     }
 
     /**
      * @return The regions
      */
-    public List<String> getRegions() {
+    public RealmList<RealmString> getRegions() {
         return regions;
     }
 
     /**
      * @param regions The regions
      */
-    public void setRegions(List<String> regions) {
+    public void setRegions(RealmList<RealmString> regions) {
         this.regions = regions;
     }
 

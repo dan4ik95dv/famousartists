@@ -10,5 +10,13 @@ public interface ArtistsMvpView extends FragmentMvpView {
 
     ArtistsFragment getFragment();
 
+    void hideProgress();
+
+    void empty();
+
+    void success();
+
+    void error();
+
 
 }
